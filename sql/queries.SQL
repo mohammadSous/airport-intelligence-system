@@ -1,4 +1,4 @@
-SELECT 
+airportairportSELECT 
     f.flight_id,
     f.airline,
     f.status,

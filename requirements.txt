@@ -72,3 +72,6 @@ airport-intelligence-system/
 ├── README.md
 ├── requirements.txt
 └── analysis.py
+
+sqlalchemy
+pathlib 

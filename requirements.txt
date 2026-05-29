@@ -1,77 +1,10 @@
-structure written:
-airport-intelligence-system/
-│
-├── api/
-│   ├── main.py
-│   └── routes/
-│       ├── flights.py
-│       ├── airlines.py
-│       └── predictions.py
-│
-├── dashboard/
-│   ├── app.py
-│   ├── pages/
-│   │   ├── overview.py
-│   │   ├── airlines.py
-│   │   ├── baggage.py
-│   │   └── predictions.py
-│   └── charts/
-│
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   └── exports/
-│
-├── ml/
-│   ├── train_model.py
-│   ├── predict.py
-│   ├── features.py
-│   ├── evaluate_model.py
-│   ├── preprocessing.py
-│   └── models/
-│       └── delay_model.pkl
-│
-├── notebooks/
-│   ├── exploratory_analysis.ipynb
-│   ├── feature_engineering.ipynb
-│   └── model_experiments.ipynb
-│
-├── screenshots/
-│   ├── dashboard/
-│   ├── api/
-│   └── charts/
-│
-├── sql/
-│   ├── schema.SQL
-│   ├── inserts.SQL
-│   ├── queries.SQL
-│   │
-│   └── reports/
-│       ├── flights_per_airline.sql
-│       ├── delayed_flights_per_airline.sql
-│       ├── average_ticket_price_per_airline.sql
-│       ├── total_revenue_per_airline.sql
-│       ├── most_popular_destinations.sql
-│       ├── tickets_sold_per_flight.sql
-│       ├── baggage_count_per_passenger.sql
-│       ├── average_baggage_weight_by_type.sql
-│       ├── employee_flight_assignment_count.sql
-│       └── flights_by_status.sql
-│
-├── utils/
-│   ├── db_connection.py
-│   ├── load_queries.py
-│   └── helpers.py
-│
-├── tests/
-│   ├── test_api.py
-│   ├── test_queries.py
-│   └── test_ml.py
-│
-├── .gitignore
-├── README.md
-├── requirements.txt
-└── analysis.py
-
+pandas
+numpy
 sqlalchemy
-pathlib 
+pymysql
+matplotlib
+streamlit
+scikit-learn
+joblib
+fastapi
+uvicorn

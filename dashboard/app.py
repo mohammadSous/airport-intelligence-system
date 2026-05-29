@@ -14,7 +14,7 @@ st.set_page_config(
 st.title("Airport Intelligence Dashboard")
 st.write("This dashboard shows airport analytics using Python, Pandas, SQL, and Streamlit!")
 
-
+st.divider()
 #Metrics summary
 flights_df = load_report("Flights per airline")
 delays_df = load_report("Delayed flights per airline")
@@ -22,14 +22,16 @@ revenue_df = load_report("Total revenue per airline")
 
 col1, col2, col3 = st.columns(3)
 
-col1.metric("Total Flights", flights_df["total_flights"].sum())
-col2.metric("Total Delayed Flights", delays_df["delayed_flights"].sum())
+col1.metric("Total Flights", f"{flights_df['total_flights'].sum():,}")
+col2.metric("Total Delayed Flights", f"{delays_df['delayed_flights'].sum():,}")
 col3.metric("Total Revenue", f"${revenue_df['total_revenue'].sum():,.2f}")
 
+st.divider()
 #Static important chart
+
 st.subheader("Delayed Flights per Airline")
 st.bar_chart(delays_df.set_index("airline")["delayed_flights"])
-
+st.caption("Shows which airlines have the highest number of delayed flights")
 #sidebar/explorer
 st.sidebar.title("Dashboard Filters")
 
@@ -44,6 +46,7 @@ selected_report = st.sidebar.selectbox(
     list(explorer_charts.keys())
 )
 
+st.divider()
 #Load the DataFrame for the selected report
 df = load_report(selected_report)
 
@@ -55,3 +58,4 @@ st.dataframe(df.head(10))
 #Get chart columns and display chart
 x_col, y_col = explorer_charts[selected_report]
 st.bar_chart(df.set_index(x_col)[y_col])
+st.caption(f"Bar chart showing {y_col} grouped by {x_col}.")

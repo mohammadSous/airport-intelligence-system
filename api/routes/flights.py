@@ -1,15 +1,12 @@
 from utils.helpers import dataframe_to_records
 from fastapi import APIRouter, HTTPException #mini route manager, and API error.
-from utils.load_queries import CHARTS, load_report, REPORT_ENDPOINTS
+from utils.load_queries import load_report, FLIGHT_REPORTS
 
-#every route in this file starts with /api/reports (for the URL)
 router = APIRouter(
-    prefix="/api/reports",
-    tags=["Reports"]
+    prefix="/api/flights",
+    tags=["flights"]
 )
 
-
-#returns a URL /api/repots/{/report_id}
 @router.get("/")
 def list_reports():
     """
@@ -17,11 +14,11 @@ def list_reports():
     """
     reports = []
 
-    for report_id, report_name in REPORT_ENDPOINTS.items():
+    for report_id, report_name in FLIGHT_REPORTS.items():
         reports.append({
             "report_id": report_id,
             "report_name": report_name,
-            "url": f"/api/reports/{report_id}"
+            "url": f"/api/flights/{report_id}"
         })
 
     return reports
@@ -32,13 +29,13 @@ def get_report(report_id: str):
     """
     Return a full SQL report as JSON.
     """
-    if report_id not in REPORT_ENDPOINTS:
+    if report_id not in FLIGHT_REPORTS:
         raise HTTPException(
             status_code=404,
             detail="Report not found"
         )
 
-    report_name = REPORT_ENDPOINTS[report_id]
+    report_name = FLIGHT_REPORTS[report_id]
     df = load_report(report_name)
 
     return {
@@ -54,13 +51,13 @@ def preview_report(report_id: str, limit: int = 10):
     """
     Return only the first rows of a report.
     """
-    if report_id not in REPORT_ENDPOINTS:
+    if report_id not in FLIGHT_REPORTS:
         raise HTTPException(
             status_code=404,
             detail="Report not found"
         )
 
-    report_name = REPORT_ENDPOINTS[report_id]
+    report_name = FLIGHT_REPORTS[report_id]
     df = load_report(report_name).head(limit)
 
     return {

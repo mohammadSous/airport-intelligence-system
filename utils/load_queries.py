@@ -37,7 +37,35 @@ CHARTS_TO_SHOW = {
     "Employee flight assignment count": CHARTS["Employee flight assignment count"],
     "Flights by status": CHARTS["Flights by status"],
 }
+##############################
+#for api/routes/ use:
+REPORT_ENDPOINTS = {
+    "flights-per-airline": "Flights per airline",
+    "delayed-flights-per-airline": "Delayed flights per airline",
+    "average-ticket-price-per-airline": "Average ticket price per airline",
+    "total-revenue-per-airline": "Total revenue per airline",
+    "most-popular-destinations": "Most popular destinations",
+    "tickets-sold-per-flight": "Tickets sold per flight",
+    "baggage-count-per-passenger": "Baggage count per passenger",
+    "average-baggage-weight-by-type": "Average baggage weight by type",
+    "employee-flight-assignment-count": "Employee flight assignment count",
+    "flights-by-status": "Flights by status",
+}
 
+FLIGHT_REPORTS = {
+    "flights-by-status": "Flights by status",
+    "delayed-flights-per-airline": "Delayed flights per airline",
+    "most-popular-destinations": "Most popular destinations",
+    "tickets-sold-per-flight": "Tickets sold per flight",
+}
+
+AIRLINE_REPORTS = {
+    "flights-per-airline": "Flights per airline",
+    "delayed-flights-per-airline": "Delayed flights per airline",
+    "average-ticket-price-per-airline": "Average ticket price per airline",
+    "total-revenue-per-airline": "Total revenue per airline",
+}
+###############################
 def load_report(report_name):
     engine = get_engine()
 

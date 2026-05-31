@@ -2,20 +2,21 @@
 
 ## Overview
 
-Airport Intelligence System is an end-to-end data analytics project built using MySQL, Python, Pandas, Streamlit, and FastAPI.
+Airport Intelligence System is an end-to-end data analytics and machine learning project built using MySQL, Python, Pandas, Streamlit, FastAPI, and Scikit-Learn.
 
-The project simulates an airport management environment and demonstrates the complete workflow of:
+The project simulates airport operations and demonstrates a complete data workflow, from database design and SQL analytics to machine learning model development and API integration.
 
-* Database design
-* Data generation and storage
-* SQL analytics and reporting
-* Python data processing
-* Data visualization
-* Interactive dashboard development
-* REST API development
-* Future machine learning integration
+The system includes:
 
-The goal of this project is to strengthen practical data science, data engineering, machine learning, and software development skills through a realistic end-to-end application.
+* Relational database design and synthetic data generation
+* Analytical SQL reporting
+* Python-based data processing and visualization
+* Interactive Streamlit dashboard
+* FastAPI backend with REST endpoints
+* Flight delay prediction using machine learning
+
+The goal of the project is to develop practical experience in data analytics, machine learning workflows, backend development, and data-driven application design through a realistic airport operations use case.
+
 
 ---
 
@@ -253,22 +254,52 @@ Through this project I practiced:
 * Python package structure
 * Modular project organization
 * Git and GitHub workflows
+* Machine learning preprocessing
+* One-Hot Encoding
+* Feature scaling with StandardScaler
+* ColumnTransformer pipelines
+* Train/Test splitting
+* Logistic Regression
+* Random Forest
+* Classification metrics
+* Confusion Matrix analysis
+* Precision, Recall and F1-score evaluation
+* Feature engineering for machine learning
+* Model comparison and selection
 
 ---
 
 ## Future Development
 
-### Machine Learning Module
+## Machine Learning Module
 
-Planned machine learning functionality includes:
+The project includes a flight delay prediction pipeline built using Scikit-Learn.
 
-* Feature engineering
-* Data preprocessing
-* Train/test splitting
-* Delay prediction model
-* Model evaluation
-* Model persistence
-* Prediction API integration
+### Machine Learning Workflow
+
+* Feature engineering using SQL aggregations
+* Data preprocessing with One-Hot Encoding and Standard Scaling
+* Train/Test split evaluation
+* Logistic Regression classifier
+* Random Forest classifier
+* Confusion Matrix analysis
+* Precision, Recall, F1-Score evaluation
+* Model comparison and selection
+
+### Model Selection
+
+Multiple models were evaluated for flight delay prediction.
+
+Although Random Forest achieved higher overall accuracy, Balanced Logistic Regression was selected as the primary model because it achieved significantly higher recall on delayed flights, aligning better with the business objective of identifying potential delays before departure.
+
+### Current Best Model
+
+Balanced Logistic Regression
+
+* Accuracy: 61.5%
+* Delay Recall: 66%
+* Delay Detection: 35 out of 53 delayed flights correctly identified
+
 
 ### Dashboard Improvements
 

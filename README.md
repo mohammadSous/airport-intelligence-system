@@ -592,7 +592,3 @@ Through this project I practiced:
 ## Author
 
 Mohammad Sous
-
-AI & Data Science Student
-
-Al-Zaytoonah University of Jordan

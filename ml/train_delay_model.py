@@ -9,6 +9,7 @@ from sklearn.metrics import (
     confusion_matrix,
     classification_report
 )
+import joblib
 from utils.db_connection import get_engine
 
 
@@ -79,3 +80,7 @@ model.fit(X_train, y_train)
 
 
 y_pred = model.predict(X_test)
+
+#Save trained model + preprocessor using joblib
+joblib.dump(model, "ml/models/delay_model.pkl")
+joblib.dump(preprocessor, "ml/models/delay_preprocessor.pkl")

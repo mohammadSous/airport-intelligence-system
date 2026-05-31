@@ -4,15 +4,10 @@ from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import (
-    accuracy_score,
-    confusion_matrix,
-    classification_report
-)
 import joblib
 from utils.db_connection import get_engine
 
-
+MODELS_DIR = Path(__file__).parent / "models"
 SQL_ML_DIR = Path("sql/ml")
 
 
@@ -79,8 +74,8 @@ model = LogisticRegression(
 model.fit(X_train, y_train)
 
 
-y_pred = model.predict(X_test)
+#y_pred = model.predict(X_test)
 
 #Save trained model + preprocessor using joblib
-joblib.dump(model, "ml/models/delay_model.pkl")
-joblib.dump(preprocessor, "ml/models/delay_preprocessor.pkl")
+joblib.dump(model, MODELS_DIR / "delay_model.pkl")
+joblib.dump(preprocessor, MODELS_DIR / "delay_preprocessor.pkl")

@@ -2,7 +2,6 @@
 Connect report routes
 Create homepage'''
 from fastapi import FastAPI
-from api.routes import reports, summary, flights, airlines
 from api.routes import reports, summary, flights, airlines, predictions
 #creates the api app
 app = FastAPI(

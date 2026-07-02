@@ -519,6 +519,6 @@ Through this project I practiced:
 
 ---
 
-## Author
+## Note
 
-Mohammad Sous
+This project uses a fully synthetic dataset created for educational purposes. Airline names are included only to make the simulated airport environment more realistic. The data does not represent real operational or financial information.
